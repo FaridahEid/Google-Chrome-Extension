@@ -1,0 +1,158 @@
+@import 'global.css';
+
+.container {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+}
+
+.workflow-flex {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+#selectWorkflow {
+  max-width: 200px;
+}
+
+#selectGroup {
+  max-width: 200px;
+}
+
+.prompt {
+  width: inherit;
+  margin: 0;
+}
+
+#group {
+  height: 20px;
+  width: 200px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+#workflow {
+  height: 20px;
+  width: 200px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+#add-group:hover {
+  top: -3px;
+  cursor: pointer;
+}
+
+img {
+  position: absolute;
+  display: block;
+  top: 92%;
+  left: 88%;
+}
+
+#clipboard-icon {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  border: 1px solid #555;
+}
+
+option {
+  width: inherit;
+}
+
+send-page input {
+  height: 20px;
+  width: 225px;
+  margin-left: 0px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+.green-button {
+  position: relative;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: #006747;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+
+.green-button:hover {
+  top: -3px;
+  cursor: pointer;
+}
+
+.what-is-anchor {
+  position: relative;
+  top: -17px;
+  left: 100px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+/*
+
+.plus-button {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: #70975B;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1.1);
+}
+
+.plus-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 50%;
+    background: white;
+}
+
+.plus-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+    width: 2px;
+    background: white;
+}
+
+.plus-button.clicked {
+    transform: translate(-50%, -50%) rotate(360deg);
+    background: #CC2A41;
+}
+
+.plus-button.clicked:before {
+    width: 0;
+}*/

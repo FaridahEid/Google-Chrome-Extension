@@ -1,0 +1,74 @@
+#add-group:hover {
+  top: 0px;
+  cursor: default;
+}
+
+.green-button:hover {
+  top: 0px;
+  cursor: default;
+}
+
+#add-filename:hover {
+  top: 0px;
+  cursor: default;
+}
+
+.shadow {
+  z-index: 1;
+  display: block;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background-color: black;
+  opacity: 50%;
+}
+
+.tutorial-button {
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  opacity: 0%;
+}
+
+.tutorial-button:hover {
+  cursor: pointer;
+}
+
+.textbubble {
+  z-index: 3;
+  width: 50%;
+  position: absolute;
+  background: white;
+  padding: 20px 24px;
+  border-radius: 20px;
+  text-justify: auto;
+}
+
+.textbubble::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  width: 30px;
+  height: 20px;
+  background: white;
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+  transform: translateY(calc(+100% - 1px));
+}
+
+.textbubble::after {
+  content: 'Click Anywhere to continue..';
+  position: absolute;
+  bottom: -20px;
+  left: 80px;
+  color: white;
+  width: 250px;
+  font-size: 13px;
+}
+
+.pos-1 {
+  bottom: 50px;
+  left: 50px;
+}

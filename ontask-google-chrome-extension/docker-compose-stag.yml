@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  node_app:
+    build:
+      context: .
+      dockerfile: DockerfileStag
+    container_name: ontask-bridge-api-stag
+    ports:
+      - "7884:80"
+    restart: always

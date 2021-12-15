@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Start workflows with GO-TASK",
+  "version": "1.0",
+  "description": "This extension helps you connect your Google Drive to your OnTask account.",
+  "icons":{
+    "128": "./img/bridge.png",
+    "48": "./img/bridge.png",
+    "16": "./img/bridge.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "./img/bridge.png",
+    "default_popup": "pages/login.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+
+}

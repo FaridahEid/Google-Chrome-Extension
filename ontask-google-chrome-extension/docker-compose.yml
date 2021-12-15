@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  node_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app/
+    container_name: ontask-bridge-api-dev
+    ports:
+      - "7884:80"
+    restart: always

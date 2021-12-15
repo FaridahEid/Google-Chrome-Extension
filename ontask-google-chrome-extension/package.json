@@ -1,0 +1,56 @@
+{
+  "name": "ocge-api",
+  "version": "2.0.0",
+  "description": "A node.js based api for ocge",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --runInBand --detectOpenHandles --no-cache",
+    "start": "node ./server.js",
+    "dev": "nodemon ./server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest",
+    "api",
+    "sequelize",
+    "mysql"
+  ],
+  "author": "Phiquest",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "deepmerge": "^4.2.2",
+    "dotenv": "^10.0.0",
+    "emoji-strip": "^1.0.1",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "formidable": "^1.2.2",
+    "googleapis": "^87.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "kill-port": "^1.6.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "multer": "^1.4.3",
+    "mysql": "^2.18.1",
+    "neverbounce": "^4.4.1",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^3.0.0",
+    "rootpath": "^0.1.2",
+    "rxjs": "^6.6.6",
+    "sequelize": "^6.3.5",
+    "string-similarity": "^4.0.4",
+    "to-unix-timestamp": "^1.0.1",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3",
+    "winston-remote": "^0.0.6"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5",
+    "nodemon": "^2.0.7",
+    "prettyjson": "^1.2.1"
+  }
+}

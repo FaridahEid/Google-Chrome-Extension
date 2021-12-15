@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../styling/tabs.css" />
+    <link rel="stylesheet" href="../styling/groups.css" />
+  </head>
+  <body>
+    <div class="tabs-div">
+      <input
+        class="active tab"
+        type="button"
+        id="groups"
+        value="Groups"
+        style="border-left: none"
+      />
+      <input class="inactive tab" type="button" id="send" value="Send" />
+      <input class="inactive tab" type="button" id="create" value="Create" />
+      <input
+        class="inactive tab"
+        type="button"
+        id="misc"
+        value="Misc"
+        style="border-right: none"
+      />
+    </div>
+
+    <div class="add-groups">
+      <button class="help-find-token" id="help-find-token">Help Find Me</button>
+      <p class="title">Add Group</p>
+
+      <div class="group-flex">
+        <p>Group Name:</p>
+        <input id="group-name" type="text" />
+      </div>
+
+      <div class="group-flex">
+        <p>Group Token:</p>
+        <input id="group-token" type="text" />
+      </div>
+
+      <input
+        class="add-group"
+        type="button"
+        id="add-group"
+        value="Add Group"
+      /><!--</div>-->
+      <p id="success-add-group"></p>
+    </div>
+    <div class="success">
+      <p class="success-add-groups" id="success-message"></p>
+    </div>
+
+    <div class="logout logo">
+      <img
+        id="logout-logo"
+        src="../img/sign-out-icon.png"
+        alt="log out"
+        style="width: 40px; height: 40px"
+      />
+    </div>
+  </body>
+  <script type="module" src="../groups.js"></script>
+  <script type="module" src="../tabs.js"></script>
+</html>

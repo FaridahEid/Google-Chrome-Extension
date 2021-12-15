@@ -1,0 +1,33 @@
+{
+  "name": "extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "popup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaridahEid/extension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaridahEid/extension/issues"
+  },
+  "homepage": "https://github.com/FaridahEid/extension#readme",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "buffer": "^6.0.3",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "https-browserify": "^1.0.0",
+    "https-proxy-agent": "^5.0.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "webpack": "^5.56.0",
+    "webpack-cli": "^4.8.0"
+  }
+}

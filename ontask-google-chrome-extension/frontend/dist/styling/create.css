@@ -1,0 +1,182 @@
+@import 'global.css';
+
+.run-from-sheet-div {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+}
+
+.optional-divs {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+}
+.optional-divs label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.optional-divs input {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+}
+
+.add-groups {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+}
+
+.run-sheet-flex {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.get-sheet-flex {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.workflow-flex {
+  display: flex;
+  flex-direction: row;
+  width: inherit;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+#selectWorkflow {
+  max-width: 200px;
+}
+
+#selectGroup {
+  max-width: 200px;
+}
+
+#group {
+  height: 20px;
+  width: 200px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+#workflow {
+  height: 20px;
+  width: 200px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+.prompt {
+  width: inherit;
+  margin: 0;
+}
+
+#logout-logo {
+  position: absolute;
+  display: block;
+  top: 92%;
+  left: 88%;
+}
+#clipboard-icon {
+  position: absolute;
+  display: block;
+
+  visibility: hidden;
+  top: 74%;
+  left: 88%;
+  border: 1px solid #555;
+}
+#check-clipboard-icon {
+  position: absolute;
+  display: block;
+
+  visibility: hidden;
+  top: 62%;
+  left: 88%;
+  border: 1px solid #555;
+}
+
+option {
+  width: inherit;
+}
+
+create-page input {
+  height: 20px;
+  width: 225px;
+  margin-left: 0px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+.green-button {
+  position: relative;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: #006747;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+
+.green-button:hover {
+  top: -3px;
+  cursor: pointer;
+}
+.set-up-results-div {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+  overflow: hidden;
+}
+
+.show-webhook {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 85%;
+  overflow: hidden;
+}
+.sheet-name-flex {
+  display: flex;
+  align-items: center;
+}
+
+.what-is-sheets {
+  position: relative;
+  top: -17px;
+  left: 100px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: black;
+}

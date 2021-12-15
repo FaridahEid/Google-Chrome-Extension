@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Groups Tutorial</title>
+    <link rel="stylesheet" href="../styling/tabs.css" />
+    <link rel="stylesheet" href="../styling/create.css" />
+    <link rel="stylesheet" href="../tutorial-css/global.css" />
+  </head>
+  <body>
+    <div class="shadow"></div>
+    <input
+      class="tutorial-button tutorial-button-3"
+      type="button"
+      id="tutorial-button-3"
+    />
+    <div class="textbubble pos-1">
+      This page is for Google Sheets. You can start web form workflow(s) in bulk
+      or you can get the results of the web forms as your recipients complete
+      them
+    </div>
+
+    <div class="create-page">
+      <div class="tabs-div">
+        <input
+          class="inactive tab"
+          type="button"
+          disabled
+          id="groups"
+          value="Groups"
+          style="border-left: none; color: black"
+        />
+        <input
+          class="inactive tab"
+          type="button"
+          disabled
+          id="send"
+          value="Send"
+          style="color: black"
+        />
+        <input
+          class="active tab"
+          type="button"
+          disabled
+          id="create"
+          value="Create"
+          style="color: black"
+        />
+        <input
+          class="inactive tab"
+          type="button"
+          disabled
+          id="misc"
+          value="Misc"
+          style="border-right: none; color: black"
+        />
+      </div>
+
+      <div class="add-groups">
+        <p id="sheetID" style="display: none"></p>
+        <p class="title">Select Workflow</p>
+        <div class="workflow-flex">
+          <div class="prompt">Select Group:</div>
+          <select id="selectGroup" name="group">
+            <option>Group Name</option>
+          </select>
+        </div>
+        <div class="workflow-flex">
+          <div class="prompt">Select Workflow:</div>
+          <select id="selectWorkflow" name="workflow">
+            <option>Workflow Name</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="optional-divs">
+        <p class="title">Actions</p>
+        <div class="workflow-flex">
+          <!--            <input class="green-button" type="button" id="test-button" value="">-->
+          <label>
+            <input
+              type="checkbox"
+              id="show-retrieve-webhook-checkbox"
+              value="Set up Webhook"
+            />
+            Run a workflow
+          </label>
+          <br />
+          <br />
+          <label>
+            <input
+              type="checkbox"
+              id="set-up-get-results-checkbox"
+              value="Set up results"
+            />
+            Set up Results
+          </label>
+        </div>
+      </div>
+
+      <div class="run-from-sheet-div" style="display: none">
+        <p class="title">Run Workflow with this sheet</p>
+        <input class="green-button" type="button" id="run-sheet" value="RUN" />
+        <p id="APIStatus"></p>
+        <!--<p id="sheetID"></p>-->
+      </div>
+
+      <div class="set-up-results-div" style="display: none">
+        <p class="title">Generate Webhook</p>
+        <div class="sheet-name-flex">
+          <p>New Sheet Name:</p>
+          <input id="new-sheet-name" type="text" />
+        </div>
+
+        <input
+          class="green-button"
+          type="button"
+          id="get-webhook-button"
+          value="Get Webhook"
+        />
+        <br />
+        <p style="visibility: hidden; margin-left: 19em" id="copy-prompt">
+          copy to clipboard
+        </p>
+        <img
+          id="clipboard-icon"
+          src="../img/copy-to-clipboard-icon.jpg"
+          alt="copy-clipboard"
+          style="width: 15px; height: 18px"
+        />
+        <img
+          id="check-clipboard-icon"
+          src="../img/clipboard-check-logo.png"
+          alt="copy-clipboard-done"
+          style="width: 15px; height: 18px"
+        />
+        <p class="user-webhook-container" id="user_webhook"></p>
+        <br />
+        <input
+          class="green-button"
+          type="button"
+          id="get-from-sheet"
+          value="Get results"
+        />
+      </div>
+
+      <div class="logout logo">
+        <img
+          id="logout-logo"
+          src="../img/sign-out-icon.png"
+          alt="log out"
+          style="width: 40px; height: 40px"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module" src="../tabs.js"></script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="../styling/tabs.css" />
+    <link rel="stylesheet" href="../styling/send.css" />
+    <link rel="stylesheet" href="../tutorial-css/global.css" />
+  </head>
+  <body>
+    <div class="shadow"></div>
+    <input
+      class="tutorial-button tutorial-button-2"
+      type="button"
+      id="tutorial-button-2"
+    />
+    <div class="textbubble pos-1">
+      Here you can start your current worksheets using the Google Document you
+      are currently viewing. <br /><br />First by selecting the workflow you
+      want and then filling out the OnTask parameters you configured
+    </div>
+
+    <div class="send-page">
+      <div class="tabs-div">
+        <input
+          class="inactive tab"
+          type="button"
+          id="groups"
+          value="Groups"
+          style="border-left: none"
+        />
+        <input class="active tab" type="button" id="send" value="Send" />
+        <input class="inactive tab" type="button" id="create" value="Create" />
+        <input
+          class="inactive tab"
+          type="button"
+          id="misc"
+          value="Misc"
+          style="border-right: none"
+        />
+      </div>
+
+      <div class="container">
+        <p id="ID" style="display: none"></p>
+        <p class="title">Select Workflow</p>
+        <div class="workflow-flex">
+          <div class="prompt">Select Group:</div>
+          <select id="selectGroup" name="group">
+            <option>Group Name</option>
+          </select>
+        </div>
+        <div class="workflow-flex">
+          <div class="prompt">Select Workflow:</div>
+          <select id="selectWorkflow" name="workflow">
+            <option>Workflow Name</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="title">Fields Help</p>
+        <div class="workflow-flex">
+          <select id="anchors" name="anchor">
+            <option>Field</option>
+          </select>
+          <select id="alphabets" name="alpha">
+            <option>Letter</option>
+          </select>
+          <img
+            id="clipboard-icon"
+            src="../img/copy-to-clipboard-icon.jpg"
+            alt="copy-clipboard"
+            style="width: 15px; height: 18px"
+          />
+          <br />
+          <label id="concat-anchor"></label>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="title">Workflow Parameters</p>
+        <form id="submitParams" name="submitParams"></form>
+
+        <input
+          class="green-button"
+          type="button"
+          id="done-button"
+          value="Submit Parameters"
+        />
+        <p id="error"></p>
+        <input
+          class="green-button"
+          type="button"
+          id="send-document-button"
+          value="Send Document"
+          style="visibility: hidden"
+        />
+      </div>
+
+      <div class="logout logo">
+        <img
+          id="logout-logo"
+          src="../img/sign-out-icon.png"
+          alt="log out"
+          style="width: 40px; height: 40px"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module" src="../tabs.js"></script>

@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+@import 'global.css';
+
+body {
+  background: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
+  width: 400px;
+  height: 480px;
+  margin: 0;
+  padding-top: 100px;
+}
+
+.welcome {
+  font-family: 'Capriola', sans-serif;
+  margin: 0 auto 0 auto;
+  font-size: 33px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.google-png {
+  display: inline;
+  width: 30px;
+  height: 30px;
+}
+
+.google-button {
+  position: relative;
+  font-size: 25px;
+  background: #f5f5f5;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.google-button:hover {
+  top: -3px;
+  text-shadow: 2px 2px 5px #8aa27d;
+}
+
+.google-div {
+  display: flex;
+  width: inherit;
+  width: 70%;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.bridge-png {
+  margin: 0 auto 0 auto;
+  width: inherit;
+  width: 80%;
+  display: block;
+}

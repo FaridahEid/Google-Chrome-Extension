@@ -1,0 +1,21 @@
+﻿{
+    "development": {
+        "config_id": "development",
+        "secret": ""
+
+    },
+    "test": {
+        "config_id": "testing",
+        "secret": ""
+    },
+    "staging": {
+        "config_id": "staging",
+        "secret": ""
+
+    },
+    "production": {
+        "config_id": "production",
+        "secret": ""
+    }
+}
+

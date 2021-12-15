@@ -1,0 +1,31 @@
+stages:
+  #- test
+  - deploy
+
+before_script:
+  - docker info
+
+# run-unit-test:
+#   stage: test
+#   tags:
+#     - stag-ontask-bridge-api
+#   script:
+#     - node -v
+#     - npm install
+#     - npm run test
+#   except:
+#     - master
+
+deploy-staging:
+  stage: deploy
+  tags:
+    - stag-ontask-bridge-api
+  environment:
+    name: staging
+  only:
+    - staging
+  script:
+    - node -v
+    - docker-compose -f docker-compose-stag.yml up -d --build
+#  except:
+#    - master

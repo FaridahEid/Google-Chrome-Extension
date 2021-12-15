@@ -1,0 +1,80 @@
+image: ubuntu
+
+stages:
+  - test
+  - deploy
+
+cache:
+  paths:
+    - vendor/
+    - node_modules/
+
+before_script:
+  - bash -c "export DEBIAN_FRONTEND=noninteractive"
+  - ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+  - apt-get update
+  - apt-get install rsync openssh-client bash curl nodejs npm lsof -y
+  - mkdir -p /root/.ssh
+  - chmod 700 /root/.ssh
+  - touch /root/.ssh/id_rsa
+  - echo $SSH_PRIVATE_KEY > /root/.ssh/id_rsa
+  - eval $(ssh-agent -s)
+  - bash -c 'ssh-add <(echo "$SSH_PRIVATE_KEY")'
+  - chmod 600 /root/.ssh/id_rsa
+
+
+run-unit-test:
+  stage: test
+  tags:
+    - test-swcserver
+  script:
+    - npm install
+    - npm run test
+  except:
+    - master
+    - demo
+
+release-staging:
+  stage: deploy
+  environment:
+    name: staging
+  only:
+    - staging
+  script:
+    - ssh -o "StrictHostKeyChecking no" root@dev-portal.scientificwellnesscenter.com "mkdir -p /root/swc_service_staging/"
+    - rsync -e "ssh -o StrictHostKeyChecking=no" -avz . root@dev-portal.scientificwellnesscenter.com:/root/swc_service_staging/
+    - ssh -o "StrictHostKeyChecking no" root@dev-portal.scientificwellnesscenter.com "cd /root/swc_service_staging/ && docker-compose down && sleep 5 && docker-compose up --build -d"
+    - ssh -o "StrictHostKeyChecking no" root@dev-portal.scientificwellnesscenter.com "docker exec -w /usr/src/app -t swc-service-staging cp cronjob.txt /etc/cron.d/swc"
+    - ssh -o "StrictHostKeyChecking no" root@dev-portal.scientificwellnesscenter.com "docker exec -w /usr/src/app -t swc-service-staging chmod 0744 bin/daily_strike_update.js bin/handle_sms_job.js bin/kick_off_db_jobs.js"
+    - ssh -o "StrictHostKeyChecking no" root@dev-portal.scientificwellnesscenter.com "docker exec -t swc-service-staging /etc/init.d/cron start"
+
+release-demo:
+  stage: deploy
+  environment:
+    name: demo
+  only:
+    - demo
+  when: manual
+  script:
+    - ssh -o "StrictHostKeyChecking no" root@demo-service.scientificwellnesscenter.com "mkdir -p /root/swc_service_demo/"
+    - rsync -e "ssh -o StrictHostKeyChecking=no" -avz . root@demo-service.scientificwellnesscenter.com:/root/swc_service_demo/
+    - ssh -o "StrictHostKeyChecking no" root@demo-service.scientificwellnesscenter.com "cd /root/swc_service_demo/ && docker-compose -f docker-compose-demo.yml down && sleep 5 && docker-compose -f docker-compose-demo.yml up --build -d"
+    - ssh -o "StrictHostKeyChecking no" root@demo-service.scientificwellnesscenter.com "docker exec -w /usr/src/app -t swc-service-demo cp cronjob_demo.txt /etc/cron.d/swc"
+    - ssh -o "StrictHostKeyChecking no" root@demo-service.scientificwellnesscenter.com "docker exec -w /usr/src/app -t swc-service-demo chmod 0744 bin/daily_strike_update.js bin/handle_sms_job.js bin/kick_off_db_jobs.js"
+    - ssh -o "StrictHostKeyChecking no" root@demo-service.scientificwellnesscenter.com "docker exec -t swc-service-demo /etc/init.d/cron start"
+
+release-production:
+  stage: deploy
+  environment:
+    name: production
+  only:
+    - master
+  when: manual
+  script:
+    - ssh -o "StrictHostKeyChecking no" root@service.scientificwellnesscenter.com "mkdir -p /root/swc_service_prod/"
+    - rsync -e "ssh -o StrictHostKeyChecking=no" -avz . root@service.scientificwellnesscenter.com:/root/swc_service_prod/
+    - ssh -o "StrictHostKeyChecking no" root@service.scientificwellnesscenter.com "rm -f /root/swc_service_prod/config.json && cp /root/config.json_prod /root/swc_service_prod/config.json "
+    - ssh -o "StrictHostKeyChecking no" root@service.scientificwellnesscenter.com "cd /root/swc_service_prod/ && docker-compose -f docker-compose-prod.yml down && sleep 5 && docker-compose -f docker-compose-prod.yml up --build -d"
+    - ssh -o "StrictHostKeyChecking no" root@service.scientificwellnesscenter.com "docker exec -w /usr/src/app -t swc-service-prod cp cronjob_prod.txt /etc/cron.d/swc"
+    - ssh -o "StrictHostKeyChecking no" root@service.scientificwellnesscenter.com "docker exec -w /usr/src/app -t swc-service-prod chmod 0744 bin/daily_strike_update.js bin/handle_sms_job.js bin/kick_off_db_jobs.js"
+    - ssh -o "StrictHostKeyChecking no" root@service.scientificwellnesscenter.com "docker exec -t swc-service-prod /etc/init.d/cron start"

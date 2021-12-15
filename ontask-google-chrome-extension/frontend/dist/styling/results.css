@@ -1,0 +1,99 @@
+@import 'global.css';
+
+.retrieve-webhook {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+  overflow: hidden;
+}
+
+.show-webhook {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 85%;
+  overflow: hidden;
+}
+#show-webhook img {
+  position: absolute;
+  left: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+#show-webhook img.transparent {
+  opacity: 0;
+}
+
+.green-button {
+  position: relative;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: #006747;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+
+#logout-logo {
+  position: absolute;
+  display: block;
+  top: 92%;
+  left: 88%;
+}
+#clipboard-icon {
+  position: absolute;
+  display: block;
+
+  visibility: hidden;
+  top: 26%;
+  left: 88%;
+  border: 1px solid #555;
+}
+
+#check-clipboard-icon {
+  position: absolute;
+  display: block;
+
+  visibility: hidden;
+  top: 26%;
+  left: 88%;
+  border: 1px solid #555;
+}
+
+#copy-prompt {
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  top: 25%;
+  left: 64%;
+}
+
+.add-filename-class {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+}
+
+#add-filename:hover {
+  top: -3px;
+  cursor: pointer;
+}
+.filename-flex {
+  display: flex;
+  align-items: center;
+}
+#file-name {
+  height: 20px;
+  width: 225px;
+  margin-left: 20px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}

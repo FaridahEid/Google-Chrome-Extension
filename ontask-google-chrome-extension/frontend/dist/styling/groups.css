@@ -1,0 +1,124 @@
+@import 'global.css';
+
+.current-groups {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+}
+
+.add-groups {
+  display: flex;
+  margin: 0 auto 0 auto;
+  flex-direction: column;
+  width: 90%;
+}
+
+.remove-group {
+  position: relative;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: #ef6f6c;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+
+.add-group {
+  position: relative;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: #006747;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+
+.group-flex {
+  display: flex;
+  align-items: center;
+}
+
+#group-name {
+  height: 20px;
+  width: 225px;
+  margin-left: 20px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+#group-token {
+  height: 20px;
+  width: 225px;
+  margin-left: 20px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: #c4c4c4;
+  padding-left: 10px;
+}
+
+#remove-group:hover {
+  top: -3px;
+  cursor: pointer;
+}
+
+#add-group:hover {
+  top: -3px;
+  cursor: pointer;
+}
+
+img {
+  position: absolute;
+  display: block;
+  top: 92%;
+  left: 88%;
+}
+
+.help-find-token {
+  position: absolute;
+  top: 85px;
+  left: 260px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+/*
+#success-add-group {
+    padding: 20px;
+    background: #a9dee8;
+    color: #000000;
+}
+
+#success-add-group.animated {
+    -moz-animation: cssAnimation 2s ease-in;
+    !* Firefox *!
+    -webkit-animation: cssAnimation 2s ease-in;
+    !* Safari and Chrome *!
+    -o-animation: cssAnimation 2s ease-in;
+    !* Opera *!
+    animation: cssAnimation 2s ease-in;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 0;display:none;}
+    !* 59 sec : start fading in*!
+    92%   {opacity: 0;display:block;}
+    !* 60 sec : visible *!
+    94%   {opacity: 1;display:block;}
+    !* 62 sec : start fading out *!
+    97%   {opacity: 1;display:block;}
+    !* 63 sec : not visible *!
+    99%   {opacity: 0;display:block;}
+    !* 64 sec *!
+    100%   {opacity: 0;display:none;}
+}
+*/
